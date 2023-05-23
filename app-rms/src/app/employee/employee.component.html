@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="empId">Employee ID
+        </label>
+          <input
+            type="text"
+            class="form-control"
+            id="empId"
+            required
+            [(ngModel)]="employee.empId"
+            name="empId"      />
+        </div>
+  
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="employee.name"
+            name="name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="managerId">Manager Id</label>
+          <input
+            class="form-control"
+            id="managerId"
+            required
+            [(ngModel)]="employee.managerId"
+            name="managerId"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="managerName">Manager Name</label>
+          <input
+            class="form-control"
+            id="managerName"
+            required
+            [(ngModel)]="employee.managerName"
+            name="managerName"
+          />
+        </div>
+
+          
+        <div class="form-group">
+          <label for="password" >Password</label>
+          <input
+            class="form-control"
+            id="passoward"
+            type="password"
+            required
+            [(ngModel)]="employee.password"
+            name="password"            
+          />
+          <div>  <button (click)="onClick()">
+            <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+              <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+          </button></div>
+        
+        </div>
+    
+    
+        
+        <button (click)="saveEmployee()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Empoyee record was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newEmployee()">Add</button>
+      </div>
+    </div>
+  </div>
+  
